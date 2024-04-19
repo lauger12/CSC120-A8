@@ -174,7 +174,7 @@ public class Player implements Contract {
      */
     public Number shrink() {
         System.out.println("You feel your body start to shrink!");
-        this.size = -1;
+        this.size = this.size.doubleValue() - 1;
         return this.size;
     }
 
@@ -185,7 +185,7 @@ public class Player implements Contract {
      */
     public Number grow() {
         System.out.println("You feel your body start to grow!");
-        this.size = +1;
+        this.size = this.size.doubleValue() + 1;
         return this.size;
     }
 
@@ -228,16 +228,14 @@ public class Player implements Contract {
     public static void main(String[] args) {
         Player p = new Player();
         System.out.println(p);
-        System.out.println(p.size);
-        System.out.println(p.isFlying);
         p.transmutate();
         // p.grab("Apple");
-        System.out.println(p.inventory);
-        System.out.println(p.size);
-        System.out.println(p.isFlying);
+        System.out.println(p);
+        p.grow();
+        System.out.println(p);
         p.walk();
         // p.fly(1, 2);
-        System.out.println(p.xCoord.intValue() + " " + p.yCoord.intValue());
+        // System.out.println(p.xCoord.intValue() + " " + p.yCoord.intValue());
         // p.undo();
         // System.out.println(p.inventory);
         // System.out.println(p.xCoord.intValue() + " " + p.yCoord.intValue());
